@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit extension",
+  "version": "1.0",
+  "description": "A Chrome extension to hide negative comments on Reddit",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
